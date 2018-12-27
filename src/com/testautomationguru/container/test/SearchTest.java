@@ -38,7 +38,7 @@ public class SearchTest extends BaseTest {
               { "selenium webdriver" },
               { "dockerized selenium grid" },
               { "test automation blog" },
-              { "jmeter docker" }               
+              { "jmeter docker" }
           };
     }
 

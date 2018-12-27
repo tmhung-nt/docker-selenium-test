@@ -23,23 +23,27 @@ services:
       - HUB_PORT_4444_TCP_PORT=4444
 
   search-module:
-    image: vinsdocker/containertest:demo
+    image: watarus62/container-test:demo
     container_name: search-module
     depends_on:
-      - firefox
-      - chrome
+      - firefox-node
+      - chrome-node
     environment:
       - MODULE=search-module.xml
       - BROWSER=firefox
       - SELENIUM_HUB=selenium-hub
+    volumes:
+      - ./logs/search-module:/output
 
   order-module:
-    image: vinsdocker/containertest:demo
+    image: watarus62/container-test:demo
     container_name: order-module
     depends_on:
-      - firefox
-      - chrome
+      - firefox-node
+      - chrome-node
     environment:
       - MODULE=order-module.xml
       - BROWSER=chrome
       - SELENIUM_HUB=selenium-hub
+    volumes:
+      - ./logs/order-module:/output
